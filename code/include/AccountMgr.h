@@ -1,0 +1,6 @@
+class AccountMgr
+{
+private:
+
+public:
+};
