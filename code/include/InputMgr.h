@@ -1,3 +1,6 @@
+#ifndef _INPUT_MGR_H_
+#define _INPUT_MGR_H_
+
 #include <iostream>
 
 class InputMgr
@@ -10,3 +13,5 @@ public:
     void displayMainMenu(void);
     int readInput(void);
 };
+
+#endif

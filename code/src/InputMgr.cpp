@@ -1,4 +1,4 @@
-#include "InputMgr.h"
+#include "../include/InputMgr.h"
 
 int InputMgr::readInput(void)
 {

@@ -1,16 +1,18 @@
 #include <iostream>
 
-#include "InputMgr.h"
-#include "ProgramHandler.h"
-#include "BankAccountMgr.h"
+#include "../include/InputMgr.h"
+#include "../include/SingletonProgramHandler.h"
+#include "../include/BankAccountMgr.h"
 
 int main(void)
 {
     InputMgr *inputMgr = new InputMgr();
     BankAccountMgr *bankAccountMgr = new BankAccountMgr();
+    SingletonProgramHandler& singletonProgramHandler = SingletonProgramHandler::getInstance();
+
     // SingletonProgramHandler
 
-    while (programHandler->isRunning())
+    while (singletonProgramHandler.getIsProgramRunning())
     {
         bankAccountMgr->handleUserInput(inputMgr->readInput());
     }

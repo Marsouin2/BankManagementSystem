@@ -1,6 +1,6 @@
-#include "BankAccountMgr.h"
+#include "../include/BankAccountMgr.h"
 
-BankOrder BankAccountMgr::intToEnumBankOrder(const int& rUserInput)
+/*BankOrder BankAccountMgr::intToEnumBankOrder(const int& rUserInput)
 {
 
 }
@@ -14,7 +14,7 @@ void BankAccountMgr::exit(void)
 {
     // ici faudrait envoyer a la classe ProgramHandler un bool a false pour couper le programme
     
-}
+}*/
 
 void unknownUserInput(void)
 {

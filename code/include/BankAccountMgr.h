@@ -1,3 +1,6 @@
+#ifndef _BANK_ACCOUNT_MGR_H_
+#define _BANK_ACCOUNT_MGR_H_
+
 #include <map>
 #include <string>
 #include <iostream>
@@ -25,3 +28,5 @@ public:
     virtual ~BankAccountMgr() = default;
     void handleUserInput(const int& rUserInput);
 };
+
+#endif
