@@ -1,11 +1,14 @@
 #ifndef _BANK_ACCOUNT_MGR_H_
 #define _BANK_ACCOUNT_MGR_H_
 
-#include <map>
+#include <vector>
 #include <string>
 #include <iostream>
+#include <algorithm>
+#include <cstdint>
 
-#include "AccountMgr.h"
+#include "InputMgr.h"
+#include "BankAccount.h"
 
 enum BankOrder
 { 
@@ -22,11 +25,16 @@ enum BankOrder
 class BankAccountMgr
 {
 private:
-    std::map<std::string, AccountMgr> _accountOwners;
+    // why no map with as key tuple<_owner, _title> ? -> because it's only usefull for a certain amount of data (which here will not be reached I think)
+    std::vector<BankAccount> _vBankAccount;
 public:
     BankAccountMgr() = default;
     virtual ~BankAccountMgr() = default;
-    void handleUserInput(const int& rUserInput);
+    void createNewAccount(void);
+    uint8_t handleUserInput(const int& rUserInput);
+    bool doAccountAlreadyExists(const std::string& rAccountOwner, const std::string& rAccountTitle);
+    void addAccountToVectorIfNew(const std::string& rAccountOwner, const std::string& rAccountTitle);
+    int64_t getNewAccountBalance(void);
 };
 
 #endif

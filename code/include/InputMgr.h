@@ -11,7 +11,8 @@ public:
     InputMgr() = default;
     virtual ~InputMgr() = default;
     void displayMainMenu(void);
-    int readInput(void);
+    static int readIntInput(void);
+    static std::string readStringInput(void);
 };
 
 #endif

@@ -1,6 +1,6 @@
 #include "../include/InputMgr.h"
 
-int InputMgr::readInput(void)
+int InputMgr::readIntInput(void)
 {
     int input;
     // ici faut lire l'input donne par l'utilisateur et l'envoyer a BankAccountMgr pour
@@ -9,6 +9,15 @@ int InputMgr::readInput(void)
 
     return input;
 }
+
+std::string InputMgr::readStringInput(void)
+{
+    std::string input;
+
+    std::cin >> input;
+
+    return input;
+}    
 
 void InputMgr::displayMainMenu(void)
 {

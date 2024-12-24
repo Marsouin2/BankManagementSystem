@@ -10,13 +10,18 @@ int main(void)
     BankAccountMgr *bankAccountMgr = new BankAccountMgr();
     SingletonProgramHandler& singletonProgramHandler = SingletonProgramHandler::getInstance();
 
-    // SingletonProgramHandler
-
     while (singletonProgramHandler.getIsProgramRunning())
     {
-        bankAccountMgr->handleUserInput(inputMgr->readInput());
+        inputMgr->displayMainMenu();
+        // trouver mieux que cette merde pour la gestion de la boucle du programme
+        // c'est pas bankAccountMgr qui est cense gerer l'input donc renommer handleUserInput ou faire autrement
+        if (1 == bankAccountMgr->handleUserInput(inputMgr->readIntInput()))
+        {
+            singletonProgramHandler.setIsProgramRunning(false);
+        }
     }
 
+    // voir pour degager ca si possible (smart pointers au pire)
     delete inputMgr;
     delete bankAccountMgr;
     return 0;
